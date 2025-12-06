@@ -21,12 +21,12 @@
         };
 
         COMBO_ENTER {
-            bindings = <&none>;
+            bindings = <&kp ENTER>;
             key-positions = <36 35>;
         };
 
         COMBO_R_SHIFT {
-            bindings = <&none>;
+            bindings = <&kp RIGHT_SHIFT>;
             key-positions = <28 29>;
         };
     };

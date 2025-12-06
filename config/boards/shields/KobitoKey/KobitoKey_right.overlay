@@ -66,7 +66,6 @@
 
     input-processors =
         <&sensor_rotation_right>,
-        <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
         <&zip_temp_layer 4 1000>; /* オートマウスレイヤー（レイヤー4）の指定とトラボ操作及びマウスボタン押下後に滞留する時間 */
 };
 

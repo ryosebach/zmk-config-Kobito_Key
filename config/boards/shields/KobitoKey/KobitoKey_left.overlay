@@ -93,12 +93,8 @@
 
 &zip_temp_layer {
     excluded-positions = <
-        6   /* MB1 (マウスボタン押下時にレイヤーを無効化) */
-        7   /* MB3 */
         8   /* MB2 */
         21  /* MB2 */
-        22  /* MB3 */
-        23  /* MB1 */
         30
         32
         33

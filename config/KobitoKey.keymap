@@ -8,18 +8,6 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_eisu {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp LANG2>;
-        };
-
-        combo_kana {
-            timeout-ms = <50>;
-            key-positions = <16 17>;
-            bindings = <&kp LANG1>;
-        };
-
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
@@ -31,41 +19,60 @@
             key-positions = <10 11>;
             bindings = <&kp TAB>;
         };
+
+        COMBO_ENTER {
+            bindings = <&none>;
+            key-positions = <36 35>;
+        };
+
+        COMBO_R_SHIFT {
+            bindings = <&none>;
+            key-positions = <28 29>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        DEFAULT_LAYER {
             bindings = <
-&kp Q      &kp L     &kp U     &kp COMMA    &kp DOT    &kp F     &kp W        &kp R      &kp Y      &kp P
-&kp E      &kp I     &kp A     &kp O        &kp MINUS  &kp K     &kp T        &kp N      &kp S      &kp H
-&kp Z      &kp X     &kp C     &kp V        &kp SEMI   &kp G     &kp D        &kp M      &kp J      &kp B
-&kp LCTRL  &kp LALT  &kp LCMD  &lt 2 SPACE  &kp LCTRL  &kp BSPC  &lt 1 ENTER  &kp RSHFT  &kp RSHFT  &mt LALT SLASH
+&kp Q             &kp L     &kp U   &kp COMMA               &kp DOT      &kp F            &kp W                    &kp R   &kp Y                       &kp P
+&kp E             &kp I     &kp A   &kp O                   &kp MINUS    &kp K            &kp T                    &kp N   &kp S                       &kp H
+&mt LEFT_SHIFT Z  &kp X     &kp C   &kp V                   &kp SEMI     &kp G            &kp D                    &kp M   &kp J                       &kp B
+&kp LCTRL         &kp LALT  &trans  &mt LEFT_COMMAND LANG2  &lt 1 SPACE  &lt 2 BACKSPACE  &mt RIGHT_COMMAND LANG1  &trans  &mt LEFT_BRACKET BACKSLASH  &mt RIGHT_BRACKET SQT
             >;
         };
 
         SECONDARY_LAYER {
             label = "NUMBER";
             bindings = <
-&kp N1     &kp N2    &kp N3  &kp N4     &kp N5    &kp MINUS  &trans     &kp UP    &trans     &trans
-&kp N6     &kp N7    &kp N8  &kp N9     &kp N0    &kp PLUS   &kp LEFT   &kp DOWN  &kp RIGHT  &trans
-&kp GRAVE  &kp APOS  &kp N8  &kp LBKT   &kp RBKT  &kp ASTRK  &kp SLASH  &kp LBKT  &kp RBKT   &trans
-&trans     &trans    &trans  &kp LSHFT  &trans    &trans     &trans     &trans    &trans     &trans
+&kp N1     &kp N2    &kp N3  &kp N4    &kp N5    &kp MINUS  &trans     &kp UP    &trans     &trans
+&kp N6     &kp N7    &kp N8  &kp N9    &kp N0    &kp PLUS   &kp LEFT   &kp DOWN  &kp RIGHT  &trans
+&kp GRAVE  &kp APOS  &trans  &kp LBKT  &kp RBKT  &kp ASTRK  &kp SLASH  &kp LBKT  &kp RBKT   &trans
+&trans     &trans    &trans  &trans    &trans    &trans     &trans     &trans    &trans     &trans
             >;
         };
 
-        TERITARY_LAYER {
+        TERTIARY_LAYER {
+            bindings = <
+&kp EXCLAMATION  &kp AT         &kp HASH      &kp DOLLAR            &kp PERCENT            &trans  &trans          &kp UP_ARROW    &trans           &trans
+&kp CARET        &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
+&trans           &trans         &trans        &trans                &trans                 &trans  &trans          &trans          &trans           &trans
+&trans           &trans         &trans        &trans                &trans                 &trans  &trans          &trans          &trans           &trans
+            >;
+        };
+
+        SYSTEM_LAYER {
             label = "FUNCTION";
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F1   &kp F2   &kp F3  &kp F4  &kp F5
 &trans        &trans        &trans        &trans        &bt BT_CLR      &kp F6   &kp F7   &kp F8  &kp F9  &kp F10
 &trans        &trans        &trans        &trans        &bt BT_CLR_ALL  &kp F11  &kp F12  &trans  &trans  &trans
-&trans        &trans        &trans        &trans        &trans          &kp DEL  &trans   &trans  &trans  &trans
+&trans        &trans        &trans        &trans        &trans          &trans   &trans   &trans  &trans  &trans
             >;
         };
 
-        layer3 {
+        MOUSE_LAYER {
             label = "MOUSE";
             bindings = <
 &trans     &trans    &trans    &trans    &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans

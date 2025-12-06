@@ -34,15 +34,39 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         cpi = <600>;
-        
+
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
     };
 };
 
+/ {
+  /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
+    compatible = "zmk,input-processor-temp-layer";
+    #input-processor-cells = <2>;
+    require-prior-idle-ms = <350>; /* キー押下後、何msオートマウスレイヤに入らないようにするか、誤爆防止 */
+  };
+};
+
 &tb_right_split {
     device = <&tb_right>;
 
-    input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
+    input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
+                      <&zip_temp_layer 4 5000>; /* オートマウスレイヤー（レイヤー4）の指定とトラボ操作及びマウスボタン押下後に滞留する時間 */
+};
+
+&zip_temp_layer {
+    excluded-positions = <
+        6   /* MB1 (マウスボタン押下時にレイヤーを無効化) */
+        7   /* MB3 */
+        8   /* MB2 */
+        21  /* MB2 */
+        22  /* MB3 */
+        23  /* MB1 */
+        30
+        32
+        33
+        39
+    >;
 };

@@ -88,14 +88,17 @@
 
     input-processors =
         <&sensor_rotation_right>,
-        <&zip_temp_layer 3 5000>; /* オートマウスレイヤーの指定とトラボ操作及びマウスボタン押下後に滞留する時間 */
+        <&zip_temp_layer 4 5000>; /* オートマウスレイヤー（レイヤー4）の指定とトラボ操作及びマウスボタン押下後に滞留する時間 */
 };
 
 &zip_temp_layer {
     excluded-positions = <
-        6
-        7
-        8
+        6   /* MB1 (マウスボタン押下時にレイヤーを無効化) */
+        7   /* MB3 */
+        8   /* MB2 */
+        21  /* MB2 */
+        22  /* MB3 */
+        23  /* MB1 */
         30
         32
         33

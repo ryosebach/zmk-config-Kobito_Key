@@ -74,6 +74,7 @@
             <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>
             ;
+    /*
     ignore_automouse {
         layers = <4>;
         input-processors =
@@ -82,8 +83,9 @@
             <&zip_y_scaler 1 15>,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,
-            <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>; /* スクロールでもオートマウスレイヤに入るようにする */
+            <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>;
     };
+    */
     change_layer {
         layers = <0>;
         input-processors =
@@ -93,7 +95,7 @@
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,
-            <&zip_temp_layer 3 5000>;
+            <&zip_temp_layer 4 5000>;
     };
     };
 
@@ -108,17 +110,19 @@
 &tb_right_listener {
     status = "okay";
 
+    /*
     ignore_automouse {
         layers = <4>;
         input-processors =
-        <&sensor_rotation_right>;
+            <&sensor_rotation_right>;
     };
+    */
     change_layer {
         layers = <0>;
         input-processors =
             <&sensor_rotation_right>,
             <&zip_xy_scaler 1 1>,
-            <&zip_temp_layer 3 5000>;
+            <&zip_temp_layer 4 5000>;
     };
 };
 

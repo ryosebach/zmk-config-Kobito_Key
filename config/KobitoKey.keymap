@@ -36,6 +36,7 @@
     keymap {
         compatible = "zmk,keymap";
 
+        /* レイヤー0: デフォルトレイヤー */
         DEFAULT_LAYER {
             bindings = <
 &kp Q      &kp L           &kp U         &kp COMMA               &kp DOT      &kp F            &kp W                    &kp R      &kp Y                       &kp P
@@ -45,6 +46,7 @@
             >;
         };
 
+        /* レイヤー1: 数字 */
         SECONDARY_LAYER {
             label = "NUMBER";
             bindings = <
@@ -55,6 +57,7 @@
             >;
         };
 
+        /* レイヤー2: 記号 + 矢印 */
         TERTIARY_LAYER {
             bindings = <
 &kp EXCLAMATION  &kp AT         &kp HASH      &kp DOLLAR            &kp PERCENT            &trans  &trans          &kp UP_ARROW    &trans           &trans
@@ -64,6 +67,7 @@
             >;
         };
 
+        /* レイヤー3: システム */
         SYSTEM_LAYER {
             label = "FUNCTION";
             bindings = <
@@ -74,6 +78,7 @@
             >;
         };
 
+        /* レイヤー4: マウス */
         MOUSE_LAYER {
             label = "MOUSE";
             bindings = <

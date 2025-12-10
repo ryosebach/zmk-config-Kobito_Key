@@ -37,16 +37,18 @@
         compatible = "zmk,keymap";
 
         /* レイヤー0: デフォルトレイヤー */
+
         DEFAULT_LAYER {
             bindings = <
-&kp Q      &kp L           &kp U         &kp COMMA               &kp DOT      &kp F            &kp W                    &kp R      &kp Y                       &kp P
-&kp E      &kp I           &kp A         &kp O                   &kp MINUS    &kp K            &kp T                    &kp N      &kp S                       &kp H
-&kp Z      &kp X           &kp C         &kp V                   &kp SEMI     &kp G            &kp D                    &kp M      &kp J                       &kp B
-&kp LCTRL  &kp LEFT_SHIFT  &kp LEFT_ALT  &mt LEFT_COMMAND LANG2  &lt 1 SPACE  &lt 2 BACKSPACE  &mt RIGHT_COMMAND LANG1  &kp RCTRL  &mt LEFT_BRACKET BACKSLASH  &mt RIGHT_BRACKET SQT
+&kp Q             &kp L         &kp U         &kp COMMA               &kp DOT      &kp F            &kp W                    &kp R      &mt SLASH Y                 &mt EQUAL P
+&kp E             &kp I         &kp A         &kp O                   &kp MINUS    &kp K            &kp T                    &kp N      &kp S                       &kp H
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                   &kp SEMI     &kp G            &kp D                    &kp M      &kp J                       &kp B
+&kp LCTRL         &kp LEFT_ALT  &kp LEFT_ALT  &mt LEFT_COMMAND LANG2  &lt 1 SPACE  &lt 2 BACKSPACE  &mt RIGHT_COMMAND LANG1  &kp RCTRL  &mt LEFT_BRACKET BACKSLASH  &mt RIGHT_BRACKET SQT
             >;
         };
 
         /* レイヤー1: 数字 */
+
         SECONDARY_LAYER {
             label = "NUMBER";
             bindings = <
@@ -58,6 +60,7 @@
         };
 
         /* レイヤー2: 記号 + 矢印 */
+
         TERTIARY_LAYER {
             bindings = <
 &kp EXCLAMATION  &kp AT         &kp HASH      &kp DOLLAR            &kp PERCENT            &trans  &trans          &kp UP_ARROW    &trans           &trans
@@ -68,6 +71,7 @@
         };
 
         /* レイヤー3: システム */
+
         SYSTEM_LAYER {
             label = "FUNCTION";
             bindings = <
@@ -79,6 +83,7 @@
         };
 
         /* レイヤー4: マウス */
+
         MOUSE_LAYER {
             label = "MOUSE";
             bindings = <
